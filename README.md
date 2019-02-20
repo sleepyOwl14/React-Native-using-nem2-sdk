@@ -3,8 +3,7 @@
 This documentation is intended to solve dependancies issues of react-native when using NEM2-sdk, but is not limited to NEM2-sdk package. This method is appliable for any package that is using nodeJS built-in library, just so you know what you are doing.
 
 >Since react-native will check dependancies during compile time, package existence checking is not possible during run time.
-
-
+##
 Steps to workaround:
 
 Create a react-native project and change to the project directory
@@ -12,8 +11,7 @@ Create a react-native project and change to the project directory
 >Please follow the instructions to create a react-native project [here](https://facebook.github.io/react-native/docs/getting-started).
 >
 >Installing dependancy with `yarn` is not recommended, as I am not able to make it work when installing with `yarn`. If someone kind of happen to tested it out, please kindly let me know the result. Many Thanks~~!!!
-
-
+##
 Create new file named `rn-cli.config.js`, put in the code as below:
 
 ```javascript
@@ -42,8 +40,7 @@ module.exports = {
 };
 ```
 > What it does is resolve the packages that is built-in in nodejs to another packages
-
-
+##
 put in all required the dependancy in package.json, under dependancies:
 
 ```javascript
@@ -72,13 +69,13 @@ put in all required the dependancy in package.json, under dependancies:
 "vm-browserify": "^1.1.0"
 ```
 
-
+##
 install all the dependancies
 ```sh
 npm install
 ```
 
-
+##
 add packager config file into `app.json`, include the config file which is the `rn-cli.config.js` file created above
 
 add the code below in the app.json, inside the expo object
@@ -89,7 +86,7 @@ add the code below in the app.json, inside the expo object
     "config": "rn-cli.config.js"
 },
 ```
-
+##
 run the command below
 
 ```sh
@@ -108,13 +105,12 @@ for windows
 
 after running the command, a `shim.js` file will be created
 
-
 insert this code at the top of App.js
 ```javascript
 import './shim.js'
 ```
 
-
+##
 run the following command with terminal or cmd, if the package `react-native-crypto` exist :
 
 `Please remove it using yarn if the package is installed with yarn`
@@ -128,6 +124,7 @@ npm uninstall react-native-randombytes
 > we need to remove react-native-crypto and react-native-randombytes
 > as we are not using it, we are using crypto-browserify and react-native-randombytes throwing error
 
+##
 just import the NEM2-sdk with require
 ```javascript
 const nem2 = require('nem2-sdk');
