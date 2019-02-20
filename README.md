@@ -1,6 +1,6 @@
 # React-Native using NEM2-SDK 
 
-This documentation is intended to solve dependancies issues of react-native when using NEM2-sdk, but is not limited to NEM2-sdk package. This method is appliable for any package that is using nodeJS built-in library, just so you know what you are doing.
+This documentation is intended to solve dependancies issues of react-native when using NEM2-sdk, but is not limited to NEM2-sdk package. This method is appliable for any package that is using nodeJS built-in library, if you know what you are doing.
 
 >Since react-native will check dependancies during compile time, package existence checking is not possible during run time.
 ##
