@@ -9,6 +9,7 @@ Steps to workaround:
 Create a react-native project and change to the project directory
 
 >Please follow the instructions to create a react-native project [here](https://facebook.github.io/react-native/docs/getting-started).
+>
 >Installing dependancy with `yarn` is not recommended, as I am not able to make it work when installing with `yarn`. If someone kind of happen to tested it out, please kindly let me know the result. Many Thanks~~!!!
 
 Create new file named `rn-cli.config.js`, put in the code as below:
