@@ -4,6 +4,7 @@ This documentation is intended to solve dependancies issues of react-native when
 
 >Since react-native will check dependancies during compile time, package existence checking is not possible during run time.
 
+
 Steps to workaround:
 
 Create a react-native project and change to the project directory
@@ -11,6 +12,7 @@ Create a react-native project and change to the project directory
 >Please follow the instructions to create a react-native project [here](https://facebook.github.io/react-native/docs/getting-started).
 >
 >Installing dependancy with `yarn` is not recommended, as I am not able to make it work when installing with `yarn`. If someone kind of happen to tested it out, please kindly let me know the result. Many Thanks~~!!!
+
 
 Create new file named `rn-cli.config.js`, put in the code as below:
 
@@ -41,6 +43,7 @@ module.exports = {
 ```
 > What it does is resolve the packages that is built-in in nodejs to another packages
 
+
 put in all required the dependancy in package.json, under dependancies:
 
 ```javascript
@@ -69,10 +72,12 @@ put in all required the dependancy in package.json, under dependancies:
 "vm-browserify": "^1.1.0"
 ```
 
+
 install all the dependancies
 ```sh
 npm install
 ```
+
 
 add packager config file into `app.json`, include the config file which is the `rn-cli.config.js` file created above
 
@@ -84,6 +89,7 @@ add the code below in the app.json, inside the expo object
     "config": "rn-cli.config.js"
 },
 ```
+
 run the command below
 
 ```sh
@@ -102,10 +108,12 @@ for windows
 
 after running the command, a `shim.js` file will be created
 
+
 insert this code at the top of App.js
 ```javascript
 import './shim.js'
 ```
+
 
 run the following command with terminal or cmd, if the package `react-native-crypto` exist :
 
@@ -127,6 +135,7 @@ const nem2 = require('nem2-sdk');
 now you can use the NEM2-sdk without error, happy coding~!!
 
 `This workaround is not 100% tested, some issues might happen when using the NEM2-sdk with react-native. Please feel free to file issues.`  
+
 
 You can check out the js nem2-sdk [here](https://github.com/nemtech/nem2-sdk-typescript-javascript).  
 
